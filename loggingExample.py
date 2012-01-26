@@ -10,10 +10,12 @@
 #-------------------------------------------------------------------------------
 #!/usr/bin/env python
 import logging
+import os
 
+logDir = os.path.dirname(__file__)+'/logs'
 logger = logging.getLogger('loggingExample')
 logger.setLevel(logging.DEBUG)
-hdlr = logging.FileHandler(r'C:\Temp\error.log')
+hdlr = logging.FileHandler(logDir+'/error.log')
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 hdlr.setFormatter(formatter)
 logger.addHandler(hdlr)
